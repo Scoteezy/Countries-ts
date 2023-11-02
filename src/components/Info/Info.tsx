@@ -41,6 +41,7 @@ const Info = (props:InfoProps) => {
     const {
         name,
         flags,
+        borders = []
     }= props;
   return (
     <Wrapper>
@@ -49,7 +50,7 @@ const Info = (props:InfoProps) => {
             <InfoTitle>{name.common}</InfoTitle>
 
             <InfoListGroup {...props}/>
-            <InfoMeta {...props}/>
+            <InfoMeta {...props} borders={borders}/>
         </div>
     </Wrapper>
   )

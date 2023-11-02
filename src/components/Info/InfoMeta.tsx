@@ -46,13 +46,12 @@ interface C {
 
 const InfoMeta = (props: InfoMetaProps) => {
     const [neighbors, setNeighbors] = useState([]);
-
     useEffect(()=>{
-        if(props.borders.length){
-            axios.get(filterByCode(props.borders)).then(
-                ({data})=> setNeighbors(data.map((c:C)=>c.name.common))
-            )
-        }
+            if(props.borders?.length){
+                axios.get(filterByCode(props.borders)).then(
+                    ({data})=> setNeighbors(data.map((c:C)=>c.name.common))
+                )
+            }
     },[props.borders])
 
   return (
@@ -68,7 +67,7 @@ const InfoMeta = (props: InfoMetaProps) => {
                 )
                     
                     }
-            </Meta>
+    </Meta>
   )
 }
 
